@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "e-bike",
+    "slug": "e-bike",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
