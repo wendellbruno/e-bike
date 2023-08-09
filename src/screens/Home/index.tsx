@@ -1,6 +1,6 @@
 import { Box } from "native-base";
 import React, { useEffect, useState } from "react";
-import {DetailBackground, MainBanner, Card} from '../../atomic';
+import {DetailBackground, MainBanner, Card, Header} from '../../atomic';
 import { api } from "../../service";
 import { FlatList } from "react-native";
 
@@ -38,7 +38,11 @@ export const Home: React.FC = () => {
     data={equipments}
     numColumns={2}
     showsVerticalScrollIndicator={false}
-    ListHeaderComponent={() => <MainBanner/> }
+    ListHeaderComponent={() => 
+    <>
+    <Header title="Choose Your Bike"/>
+    <MainBanner/>
+    </> }
     keyExtractor={item => item.id}
     renderItem={ ({item}) => <Card key={item.id} 
     image={item.image} 
