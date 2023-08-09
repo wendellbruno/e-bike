@@ -1,1 +1,1 @@
-export * from './organism';
+//export * from './organism';
