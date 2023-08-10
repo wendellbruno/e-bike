@@ -1,13 +1,17 @@
 import { Box, Image, Text } from 'native-base';
 import React from 'react';
-import { TouchableOpacity } from 'react-native';
+import { TouchableOpacity, TouchableOpacityProps } from 'react-native';
 import { CardProps } from '../../../screens';
 import { TextAlpha50 } from '../../atoms';
 
+type Proprs = CardProps & TouchableOpacityProps;
 
-export function Card({id, price, model, image, title}: CardProps){
+export function Card({id, price, model, image, title, ...rest}: Proprs){
   return (
-    <TouchableOpacity style={{padding: 5, width: '50%', height: 240, opacity: 0.9}} onPress={() => {}}>
+    <TouchableOpacity 
+    style={{padding: 5, width: '50%', height: 240, opacity: 0.9}} 
+    //se existir a função ele passa o id, isso evita o alerta de possivel undfined
+    {...rest}>
         <Box 
         borderRadius='20px' padding='4' 
         flex='1' shadow='5' 
