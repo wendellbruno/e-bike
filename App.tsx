@@ -1,13 +1,21 @@
 import { NativeBaseProvider, Box } from "native-base";
-import React from "react";
 import { theme } from "./src/styles/theme";
-import {Home} from './src/screens';
+import React from "react";
+import {NavigationContainer, DefaultTheme} from '@react-navigation/native'
+import {Routes} from './src/Routes';
+
+
+
+const navigationTheme = DefaultTheme;
+navigationTheme.colors.background = theme.colors.primary[100]
 
 export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
       <Box flex="1" bg={theme.colors.primary[100]}>
-        <Home />
+        <NavigationContainer theme={navigationTheme}>
+            <Routes />
+        </NavigationContainer>
       </Box>
     </NativeBaseProvider>
   );
