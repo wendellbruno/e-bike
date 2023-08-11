@@ -12,7 +12,7 @@ navigationTheme.colors.background = theme.colors.primary[100]
 export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
-      <Box flex="1" bg={theme.colors.primary[100]}>
+      <Box flex="1" safeAreaTop bg={theme.colors.primary[100]}>
         <NavigationContainer theme={navigationTheme}>
             <Routes />
         </NavigationContainer>
